@@ -1,47 +1,49 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
     /*border:1px solid black;*/
 }
+
+header,footer,main{
+    width: 85vw;
+    margin: 0;
+  }
 
 header {
     display: flex;
     flex-direction: column;
-    width:90vw;
     align-items: center;
 
     & > div#imagens_FICE {
         display: flex;
        justify-content: space-around;
-        width:90vw;
 
         & > img {
-            width:  30vh;
-            height: 15vh;
+            object-fit: cover;
+            width:  40vh;
+            height: 100%;
             padding:2vh;
         }
     }
 }
 
-div.triangulo01 {
-    transform: scale(-104, 3);
-    width:0;
-    height: 0;
-    background-color: transparent;
-    border:10px solid transparent;
-    border-top:10px solid rgba(4, 65, 9, 0);
-    border-left: 10px solid rgb(15, 156, 27);
+header .polygons {
+    transform: translate(6.7vw);
 }
 
-div.triangulo02 {
-    transform: scale(-104, 3);
-    width:0;
-    height: 0;
-    background-color: transparent;
-    border:10px solid transparent;
-    border-top:10px solid rgba(4, 65, 9, 0);
-    border-left: 10px solid rgb(4, 65, 9);
+.polygons > .triangulo01 {
+    background-color:green;
+    height: 50px;
+    width: 99vw;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.polygons > .triangulo02 {
+    background-color: rgb(0, 107, 0);
+    width: 95vw;
+	height: 4vh;
+	clip-path: polygon(0 0, 100% 0, 100% 100%);
+	transform: skewY(2.3deg) translateX(4vw);
+	top: 10px;
 }
 
 
@@ -50,35 +52,38 @@ main {
     justify-content: center;
     margin-inline: 5vw;
 
-    & > div.cabecalho {
-        text-align: center;
-    }
-
-    & > section {
-        columns: 2;
-        flex-direction: column;
-        padding: 5vh;
-
-        & > div.paragrafos {
-            display: grid;
-            flex-wrap: wrap;
-        
-            & > img {
-                padding: 1vh;
-                width: 30vh;
-                height:30vh;
-            }
-        }
-        
-        & >  * {
-            padding: 1vh;
-        }
-        
-    }
-}
-p,
-li {
+    & > p,
+        li {
     font-size: 20px;
     padding: 1vh;
-    font: justify;
+    }
 }
+
+main div.cabecalho {
+    text-align: center;
+}
+
+main section {
+    columns: 2;
+    flex-direction: column;
+    padding: 5vh;
+
+    & > div.paragrafos {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    & >  * {
+        padding: 1vh;
+    }
+    
+
+}
+
+.paragrafo img {
+    padding: 2rem;
+    width: 30vw;
+    object-fit: cover;
+    height:100%;
+}
+
